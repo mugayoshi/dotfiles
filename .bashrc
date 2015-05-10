@@ -30,4 +30,3 @@ export USE_CCACHE=1
 export PATH=$PATH:/Users/yoshikawamuga/apache-ant-1.9.4/bin
 export PATH=$PATH:/Users/yoshikawamuga/Documents/dex2jar-0.0.9.15
 export PATH=$PATH:/Users/yoshikawamuga/apktool-install-macos-2.1_r01-1
-

@@ -13,3 +13,4 @@ au BufWrite /private/etc/pw.* set nowritebackup nobackup
 colorscheme solarized
 syntax on
 set number
+set showmatch
