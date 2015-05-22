@@ -10,10 +10,20 @@ set backspace=2		" more powerful backspacing
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
+set background=dark
 colorscheme solarized
 syntax on
 set number
 set showmatch
-filetype indent plugin on
 set modeline
 set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+set runtimepath+=~/.vim/bundle/neobundle.vim/"
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+syntax enable
+filetype plugin indent on
+NeoBundle 'scrooloose/nerdtree'
+call neobundle#end()
+NeoBundleCheck
+colorscheme solarized
