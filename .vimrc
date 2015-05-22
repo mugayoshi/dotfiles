@@ -14,3 +14,6 @@ colorscheme solarized
 syntax on
 set number
 set showmatch
+filetype indent plugin on
+set modeline
+set tabstop=8 expandtab shiftwidth=4 softtabstop=4
