@@ -2,7 +2,6 @@ alias kerberos="ssh muga@kerberos.sslab.ics.keio.ac.jp"
 alias rm="rm -i"
 alias home="cd /"
 alias muga="cd /Users/yoshikawamuga/"
-#alias ll="ls -l"
 alias eclipse="home && muga && cd Documents/workspace/"
 alias doc="home && muga && cd Documents"
 alias gnutella="eclipse && cd Gnutella"
@@ -16,6 +15,7 @@ alias make_dx="sh /Users/yoshikawamuga/shell_script/make_dx.sh"
 alias papers="doc && cd PAPERS" 
 alias itc="ssh muga@logex00.educ.cc.keio.ac.jp"
 alias ls="ls -G"
+alias la="ls -a"
 
 ANDROIDNDK_HOME=/Users/yoshikawamuga/Android_Development/android-ndk-r10
 PATH=$PATH:${ANDROIDNDK_HOME}
