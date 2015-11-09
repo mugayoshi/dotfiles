@@ -1,7 +1,7 @@
 if [ -f ~/.bashrc ] ; then
 source ~/.bashrc
 fi
-export PS1='\e[0;31m\t muga \W$\e[m'
+export PS1='\[\e[31m\]muga \[\e[34m\]\t \W \[\e[36m\]\$ \[\e[37m\]'
 ##
 # Your previous /Users/yoshikawamuga/.bash_profile file was backed up as /Users/yoshikawamuga/.bash_profile.macports-saved_2014-10-16_at_16:04:23
 ##
