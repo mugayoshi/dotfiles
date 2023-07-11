@@ -1,32 +1,36 @@
-alias kerberos="ssh muga@kerberos.sslab.ics.keio.ac.jp"
-alias rm="rm -i"
-alias home="cd /"
-alias muga="cd /Users/yoshikawamuga/"
-alias eclipse="home && muga && cd Documents/workspace/"
-alias doc="home && muga && cd Documents"
-alias gnutella="eclipse && cd Gnutella"
-alias http="eclipse && cd MyHttpServer/bin"
-alias py="doc && cd Python"
-alias shell_script="cd /Users/yoshikawamuga/shell_script"
-alias change_ext="sh /Users/yoshikawamuga/shell_script/change_extention.sh"
-alias dex2jar="sh /Users/yoshikawamuga/shell_script/dex2jar.sh"
-alias sign_apk="sh /Users/yoshikawamuga/shell_script/sign_apk.sh"
-alias make_dx="sh /Users/yoshikawamuga/shell_script/make_dx.sh"
-alias papers="doc && cd PAPERS" 
-alias itc="ssh muga@logex00.educ.cc.keio.ac.jp"
-alias ls="ls -G"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 alias la="ls -a"
+DIR=$(basename "$(dirname "$(pwd)")")/$(basename "$(pwd)")
+PS1='$DIR:$(date +"%Y-%m-%d %H:%M:%S")
+$(git_prompt_info)\$ '
 
-ANDROIDNDK_HOME=/Users/yoshikawamuga/Android_Development/android-ndk-r10
-PATH=$PATH:${ANDROIDNDK_HOME}
-PATH=~/bin:$PATH
-export PATH=$PATH:/Users/yoshikawamuga/Documents/jad158g.mac.intel
-export PATH=$PATH:/Users/yoshikawamuga/android-sdks/tools
-export PATH=$PATH:/Users/yoshikawamuga/android-sdks/platform-tools
-export PATH=$PATH:/Users/yoshikawamuga/android-sdks/build-tools/20.0.0
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export MANPATH=/opt/local/man/:$PATH
-export USE_CCACHE=1
-export PATH=$PATH:/Users/yoshikawamuga/apache-ant-1.9.4/bin
-export PATH=$PATH:/Users/yoshikawamuga/Documents/dex2jar-0.0.9.15
-export PATH=$PATH:/Users/yoshikawamuga/apktool-install-macos-2.1_r01-1
+git_prompt_info() {
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local branch_name="$(git symbolic-ref --short HEAD 2>/dev/null)"
+    if [[ -n "$branch_name" ]]; then
+      local status="$(git status --porcelain 2>/dev/null)"
+      local ahead="$(git rev-list --count --left-only @{u}...HEAD 2>/dev/null)"
+      local behind="$(git rev-list --count --right-only @{u}...HEAD 2>/dev/null)"
+      local staged="$(grep -c '^M' <<< "$status")"
+      local modified="$(grep -c '^ M' <<< "$status")"
+      local deleted="$(grep -c '^ D' <<< "$status")"
+      local untracked="$(grep -c '^??' <<< "$status")"
+      echo " [${branch_name}$(git_prompt_ahead_behind "$ahead" "$behind") $(git_prompt_counts "$staged" "$modified" "$deleted" "$untracked")]"
+    fi
+  fi
+}
+
+git_prompt_ahead_behind() {
+  local ahead=$1
+  local behind=$2
+  local result=""
+  if [[ "$ahead" -gt 0 ]]; then
+    result+=" ↑$ahead"
+  fi
+  if [[ "$behind" -gt 0 ]]; then
+    result+=" ↓$behind"
+  fi
+  echo "$result"
+}
