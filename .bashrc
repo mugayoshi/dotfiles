@@ -2,8 +2,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias la="ls -a"
-DIR=$(basename "$(dirname "$(pwd)")")/$(basename "$(pwd)")
-PS1='$DIR:$(date +"%Y-%m-%d %H:%M:%S")
+
+PS1='$(basename "$(dirname "$(pwd)")")/$(basename "$(pwd)") \$:$(date +"%Y-%m-%d %H:%M:%S")
 $(git_prompt_info)\$ '
 
 git_prompt_info() {
