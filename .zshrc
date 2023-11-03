@@ -14,6 +14,3 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
 PROMPT=$PROMPT'${vcs_info_msg_0_}'" $ "
-
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
