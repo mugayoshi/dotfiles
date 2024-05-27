@@ -20,8 +20,6 @@ return {
       local util = require("lspconfig/util")
 
 	    local lspconfig = require("lspconfig")
-    	lspconfig.lua_ls.setup({})
-
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
