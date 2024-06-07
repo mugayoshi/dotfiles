@@ -8,6 +8,6 @@ vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
--- copy the file path of the currently open file
-vim.keymap.set("n", "<leader>fpc", "<cmd>let @+=expand('%:p')<CR>", { noremap = true, silent = true })
+-- yank the file path of the currently open file to clipboard
+vim.keymap.set("n", "<leader>yfp", "<cmd>let @+=expand('%:p')<CR>", { noremap = true, silent = true })
 
