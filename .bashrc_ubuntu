@@ -184,7 +184,7 @@ chgcloud() {
   case "$1" in
   test)
     echo "GCP test"
-    gcloud config set project hosting-setup-853
+    gcloud config set project gcp_project
     gcloud container clusters get-credentials test-platform --region=europe-west1-b
     ;;
   qt)
@@ -199,21 +199,18 @@ chgcloud() {
     ;;
   prod)
     echo "GCP production"
-    gcloud config set project mintlabs-cloudn-1
+    gcloud config set project project-cloudn-1
     gcloud container clusters get-credentials production-platform
     ;;
   stag)
     echo "GCP staging"
-    gcloud config set project hosting-setup-853
+    gcloud config set project gcp_project
     gcloud container clusters get-credentials staging --zone europe-southwest1-a
     ;;
   "")
     echo "Usage: chgcloud [test|cr|prod|stag|crprod]"
   esac
 }
-export GOOGLE_CLOUD_PROJECT="gen-lang-client-0547549982"
-# export GEMINI_MODEL="gemini-2.5-flash"
-export GEMINI_API_KEY="AIzaSyCS1mEwQHZ3R8ZQOnmNEr-neyl-NPErcMc"
 
 # pnpm
 export PNPM_HOME="/home/muga/.local/share/pnpm"
