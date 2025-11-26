@@ -161,9 +161,9 @@ fi
 
 # from warp
 alias stop_container='docker stop $(docker ps -a -q)'
-alias lint_tornado='pushd ~/repos/qmenta_backend/qmenta_tornado_server/ >/dev/null && poetry@1.4.2 run flake8 --max-line-length 120 --max-complexity 70 ./python/ && popd >/dev/null'
+alias lint_tornado='pushd ~/repos/_backend/_tornado_server/ >/dev/null && poetry@1.4.2 run flake8 --max-line-length 120 --max-complexity 70 ./python/ && popd >/dev/null'
 alias run_dojo='pushd ~/repos/frontend-dojo/ >/dev/null && sh ./local_dev/startup.sh && popd >/dev/null'
-alias run_tornado='cd ~/repos/qmenta_backend/ && sh startBackend.sh' 
+alias run_tornado='cd ~/repos/_backend/ && sh startBackend.sh' 
 alias start_kc='pushd ~/repos/cr-authn/ >/dev/null && make start && popd > /dev/nul'
 alias stop_kc='pushd ~/repos/cr-authn/ >/dev/null && make stop && popd > /dev/nul'
 #
@@ -188,13 +188,13 @@ chgcloud() {
     gcloud container clusters get-credentials test-platform --region=europe-west1-b
     ;;
   qt)
-    echo "CGP qmenta trials dev"
-    gcloud config set project qmenta-platform
+    echo "CGP dev"
+    gcloud config set project -platform
     gcloud container clusters get-credentials autopilot-cluster-1 --location=europe-west1
     ;;
   qtprod)
-    echo "CGP central review prod"
-    gcloud config set project qmenta-platform
+    echo "CGP prod"
+    gcloud config set project -platform
     gcloud container clusters get-credentials production-cluster --location=europe-west3
     ;;
   prod)
