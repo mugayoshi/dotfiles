@@ -1,16 +1,29 @@
-PROMPT="%F{magenta}%n%f %F{cyan}%D %T %~%f
-"
+# starship
+eval "$(starship init zsh)"
+
+# aliases
 alias rm="rm -i"
 alias la="ls -a"
+alias gcob='git checkout -b'
+alias gco='git checkout'
+alias gps='git push'
+alias gpl='git pull'
+alias gc='git commit -m'
+# Robust alias for Zsh and macOS (using pbcopy)
+alias cp_cmd="history | fzf | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | tee /dev/tty | pbcopy && echo -e '\n✅ Copied!'"
 
+# Enable completions for git aliases
+compdef _git gcob=git
+compdef _git gco=git
+compdef _git gps=git
+compdef _git gpl=git
+compdef _git gc=git
 
-autoload -Uz vcs_info
-precmd () { vcs_info }
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}+"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}!"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
+export PATH="$HOME/.local/bin:$PATH"
 
-PROMPT=$PROMPT'${vcs_info_msg_0_}'" $ "
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+autoload -Uz compinit && compinit
