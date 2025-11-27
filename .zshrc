@@ -1,6 +1,13 @@
 # starship
 eval "$(starship init zsh)"
 
+# history
+HISTFILE=~/.history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt inc_append_history
+
 # aliases
 alias rm="rm -i"
 alias la="ls -a"
