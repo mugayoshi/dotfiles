@@ -19,7 +19,7 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      tim.lsp.enable('lua_ls')
+      vim.lsp.enable('lua_ls')
       vim.lsp.config('lua_ls', {
         capabilities = capabilities
       })
