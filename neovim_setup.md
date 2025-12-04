@@ -37,6 +37,11 @@ npm install -g typescript typescript-language-server
 npm install -g svelte-language-server
 ```
 
+For Astro,
+```
+npm install -g @astrojs/language-server
+```
+
 4. Pull [dotfiles](https://github.com/mugayoshi/dotfiles) repository
 
 5. Open Neovim and it loads plugins automatically

@@ -10,6 +10,8 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
 	    require("mason-lspconfig").setup({
+        -- remove comment if astro is required
+	      -- ensure_installed = { "astro", "lua_ls", "pyright" }
 	      ensure_installed = { "lua_ls", "pyright" }
     	})
     end
@@ -18,6 +20,9 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      -- remove comment if astro is required
+      -- vim.lsp.enable('astro')
 
       vim.lsp.enable('lua_ls')
       vim.lsp.config('lua_ls', {
