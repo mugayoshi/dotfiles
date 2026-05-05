@@ -11,5 +11,9 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 -- yank the file path of the currently open file to clipboard
 vim.keymap.set("n", "<leader>yfp", "<cmd>let @+=expand('%:p')<CR>", { noremap = true, silent = true })
 
+-- lsp
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+
 vim.opt.spelllang = 'en'
 vim.opt.spell = true
