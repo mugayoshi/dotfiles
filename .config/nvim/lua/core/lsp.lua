@@ -3,5 +3,6 @@ vim.lsp.enable({
     "lua_ls",
     "pyright",
     "astro",
-    "ts_ls"
+    "ts_ls",
+    "vue_ls"
 })
