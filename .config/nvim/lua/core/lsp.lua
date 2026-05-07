@@ -4,5 +4,6 @@ vim.lsp.enable({
     "pyright",
     "astro",
     "ts_ls",
-    "vue_ls"
+    "vue_ls",
+    "ruby_lsp"
 })
