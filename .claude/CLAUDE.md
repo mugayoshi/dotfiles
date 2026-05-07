@@ -1,6 +1,6 @@
 ## Preference
 - I use mise (https://mise.jdx.dev/) for Ruby, Python and Node.js version management in this machine.
-  - When executing Ruby, make sure mise is activated. 
+  - When executing Ruby, Node.js, make sure mise is activated. 
 
 ## Code Review Stance
 
@@ -11,3 +11,6 @@ Be critical and rigorous when I ask coding questions. Specifically:
 - **Prefer correctness over agreement** — don't validate a flawed approach just because I seem committed to it
 - **Explain the tradeoffs** — when multiple solutions exist, tell me what each one costs, not just what it gains
 - **Push back on vague questions** — if my question is ambiguous or under-specified, ask for clarification rather than guessing
+
+## Editor
+I use Neovim and its version is higher than 0.11, which means it doesn't need to use `nvim-lspconfig` plugin for LSP configuration.
