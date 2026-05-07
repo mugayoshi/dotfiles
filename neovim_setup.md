@@ -42,6 +42,13 @@ For Astro,
 npm install -g @astrojs/language-server
 ```
 
+For Python,
+```
+pip install pyright
+or
+npm install -g pyright
+```
+
 4. Pull [dotfiles](https://github.com/mugayoshi/dotfiles) repository
 
 5. Open Neovim and it loads plugins automatically
