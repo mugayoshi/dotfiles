@@ -1,6 +1,6 @@
 return {
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.5",
+    "nvim-telescope/telescope.nvim",
      dependencies = { "nvim-lua/plenary.nvim" },
      config = function()
        local builtin = require("telescope.builtin")
@@ -15,10 +15,19 @@ return {
       local actions = require("telescope.actions")
       require("telescope").setup({
         defaults = {
+          preview = {
+            treesitter = false,
+          },
           mappings = {
               i = {
                   ["<esc>"] = actions.close,
               },
+          },
+          layout_strategy = "horizontal",
+          layout_config = {
+            horizontal = {
+              preview_cutoff = 0,
+            },
           },
         },
         pickers = {
