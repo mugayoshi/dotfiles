@@ -14,3 +14,14 @@ Be critical and rigorous when I ask coding questions. Specifically:
 
 ## Editor
 I use Neovim and its version is higher than 0.11, which means it doesn't need to use `nvim-lspconfig` plugin for LSP configuration.
+
+## Memory Rules
+
+After completing any investigation or exploration task, ask me:
+"Should I save these findings to CLAUDE.md? (yes / no / summarize)"
+
+Do NOT write to CLAUDE.md without my confirmation.
+
+When adding findings to CLAUDE.md, first check if any existing entries under
+"## Investigation Findings" are outdated or superseded by the new findings,
+and remove or update them before adding new content.
