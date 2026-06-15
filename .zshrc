@@ -19,6 +19,7 @@ alias gco='git checkout'
 alias gps='git push'
 alias gpl='git pull'
 alias gc='git commit -m'
+alias branch='git branch -a | grep -v "HEAD ->" | sed "s|^[*+ ] *||; s|^remotes/origin/||" | awk "!seen[\$0]++" | fzf --height=20% --reverse --info=inline | xargs git checkout'
 
 ## bat
 alias c='bat'
