@@ -12,5 +12,9 @@
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/muga/.claude/statusline-command.sh"
   }
 }
